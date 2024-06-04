@@ -125,5 +125,3 @@ if uploaded_file is not None:
     st.pyplot(fig)
 
     st.write("На диаграмме так же видно, что самые высокие продажи в 'Локация 3'.")
-else:
-    st.write("Пожалуйста, загрузите файл CSV для анализа.")
