@@ -1,7 +1,18 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
 import matplotlib.pyplot as plt
+import io
 import streamlit as st
+
+# Загрузка данных
+@st.cache
+def load_data():
+    df = pd.read_csv('Products.csv')
+    df.Weight.fillna(df.Weight.mean(), inplace=True)
+    df.OutletSize.fillna('Средний', inplace=True)
+    return df
+
+df = load_data()
 
 # Заголовок приложения
 st.title('Анализ торгового предприятия')
