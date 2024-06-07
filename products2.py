@@ -7,7 +7,6 @@ import io
 st.title('Анализ торгового предприятия')
 
 # Загрузка данных
-st.write('Загружаем данные...')
 df = pd.read_csv('Products.csv')
 
 # Создаем selectbox для выбора раздела
