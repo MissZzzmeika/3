@@ -59,8 +59,8 @@ if section == 'Анализ нулевых значений':
 
     # Проверка проделанной работы
     st.subheader('Проверка проделанной работы')
-    st.write(df['OutletSize'].value_counts())
     st.write(df.isnull().sum())
+    st.write(df.head(15))
 
     # Удаление дубликатов
     st.subheader('Проверка дубликатов')
