@@ -76,7 +76,7 @@ if section == 'Анализ продаж по годам основания':
 # Анализ самого прибыльного магазина по году основания
 if section == 'Анализ самого прибыльного магазина по году основания':
     st.subheader('Анализ самого прибыльного магазина по году основания')
-    st.write(df[df['EstablishmentYear']==1985].groupby('ProductType')['OutletSales'].sum().head(16).astype(int))
+    st.write(df[df['EstablishmentYear'] == 1985].groupby('ProductType')['OutletSales'].sum().head(16).astype(int))
 
     # Гистограмма объема выручки по категориям товаров для 1985 года
     st.subheader('Объем выручки по категориям товаров для 1985 года')
