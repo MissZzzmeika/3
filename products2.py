@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 import io
 
 # Заголовок приложения
@@ -76,7 +75,7 @@ if section == 'Анализ продаж по годам основания':
 # Анализ самого прибыльного магазина по году основания
 if section == 'Анализ самого прибыльного магазина по году основания':
     st.subheader('Анализ самого прибыльного магазина по году основания')
-    st.write(df[df['EstablishmentYear'] == 1985].groupby('ProductType')['OutletSales'].sum().head(16).astype(int))
+    st.write(df[df['EstablishmentYear']==1985].groupby('ProductType')['OutletSales'].sum().head(16).astype(int))
 
     # Гистограмма объема выручки по категориям товаров для 1985 года
     st.subheader('Объем выручки по категориям товаров для 1985 года')
@@ -203,3 +202,5 @@ if section == 'Выводы':
 
 Эти рекомендации помогут улучшить финансовые показатели предприятия и увеличить его конкурентоспособность на рынке.
     ''')
+
+    
