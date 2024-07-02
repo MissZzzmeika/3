@@ -6,8 +6,15 @@ import io
 # Заголовок приложения
 st.title('Анализ торгового предприятия')
 
-# Загрузка данных
-df = pd.read_csv('Products.csv')
+# Попробуйте загрузить данные и обработать возможные ошибки
+try:
+    df = pd.read_csv('Products.csv')
+except FileNotFoundError:
+    st.error('Файл "Products.csv" не найден.')
+except pd.errors.ParserError:
+    st.error('Ошибка при разборе CSV файла.')
+except Exception as e:
+    st.error(f'Произошла ошибка: {e}')
 
 # Создаем selectbox для выбора раздела
 section = st.selectbox(
@@ -202,7 +209,4 @@ if section == 'Выводы':
 
 Эти рекомендации помогут улучшить финансовые показатели предприятия и увеличить его конкурентоспособность на рынке.
     ''')
-
-    
-
 
