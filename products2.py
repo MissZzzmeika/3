@@ -1,21 +1,13 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 import io
 
 # Заголовок приложения
 st.title('Анализ торгового предприятия')
 
 # Загрузка данных
-try:
-    df = pd.read_csv('Products.csv')
-except FileNotFoundError:
-    st.error('Файл "Products.csv" не найден.')
-except pd.errors.ParserError:
-    st.error('Ошибка при разборе CSV файла.')
-except Exception as e:
-    st.error(f'Произошла ошибка: {e}')
+df = pd.read_csv('Products.csv')
 
 # Создаем selectbox для выбора раздела
 section = st.selectbox(
